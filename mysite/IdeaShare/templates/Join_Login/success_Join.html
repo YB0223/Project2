@@ -1,0 +1,27 @@
+{% extends "Join_Login/Join.html" %}
+{%block success_Join%}
+<!-- Button trigger modal -->
+<a id="success_Join_button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+</a>
+<a href="{{start_url}}{{url}}">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">가입 성공</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>가입을 축하드립니다! '{{nickname}}'님!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" >Close</button>  
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+<script>
+  document.getElementById("success_Join_button").click()
+</script>
+{%endblock%}

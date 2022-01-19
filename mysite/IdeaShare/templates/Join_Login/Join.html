@@ -1,0 +1,67 @@
+{% extends "title/title.html" %}
+{% block login %}
+    <div class="container my-3">
+        {%block Error_Join%}
+        {%endblock%}
+        <form method="post" class="post-form" action="{% url 'IdeaShare:doJoin' %}">
+            {% csrf_token %}      
+            <div class="form-group">
+                <label for="classes">종류</label>
+                <br>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="classes" id="personal" value='P' autocomplete="off" >
+                    <label class="btn btn-outline-primary" for="personal">개인</label>
+                
+                    <input type="radio" class="btn-check" name="classes" id="company" value='C'autocomplete="off">
+                    <label class="btn btn-outline-primary" for="company">기업</label>
+                
+                    <input type="radio" class="btn-check" name="classes" id="admin" value='A' autocomplete="off">
+                    <label class="btn btn-outline-primary" for="admin">관리자</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nickname">닉네임</label>
+                <input type="text" class="form-control" name="nickname" id="nickname">
+            </div>
+            <div class="form-group">
+                <label for="useremail">사용자 이메일</label>
+                <input type="email" class="form-control" name="useremail" id="useremail">
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" class="form-control" name="password" id="password">
+            </div>
+            <div class="form-group">
+                <label for="passwordcheck">비밀번호확인</label>
+                <input type="password" class="form-control" name="passwordcheck" id="passwordcheck">
+            </div>
+            <div class="form-group">
+                <label for="hint">힌트</label>
+                <input type="text" class="form-control" name="hint" id="hint">
+            </div>
+            <div class="form-group">
+                <label for="gender">성별</label>
+                <br>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    
+                    <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" value="M">
+                    <label class="btn btn-outline-primary" for="male">남자</label>
+                
+                    <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" value="F">
+                    <label class="btn btn-outline-primary" for="female">여자</label>
+                </div>
+            </div>    
+            <div class="form-group pt-3"> 
+                <button type="submit" class="btn btn-primary">가입하기</button>
+                <a href="{{start_url}}/login/">
+                    <button type="button" class="btn btn-secondary">뒤로가기</button>
+                </a>
+            </div>
+        </form>
+    </div>
+
+    {%block success_Join%}
+    {%endblock%}
+{%endblock%}
+
+

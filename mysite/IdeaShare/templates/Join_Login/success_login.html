@@ -1,0 +1,28 @@
+{% extends "Join_Login/login.html" %}
+{%block success_login%}
+<!-- Button trigger modal -->
+<a id="success_login_button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+</a>
+
+<a href="{{start_url}}{{url}}">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">로그인 성공</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>어서오세요! '{{nickname}}'님!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" >Close</button>  
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+<script>
+  document.getElementById("success_login_button").click()
+</script>
+{%endblock%}

@@ -1,0 +1,29 @@
+{% extends "title/title.html" %}
+{% block login %}
+    <div class="container my-3">
+        {%block Error_login%}
+        {%endblock%}
+
+        <form method="post" class="post-form" action="dologin">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="useremail">사용자 이메일</label>
+                <input type="email" class="form-control" name="useremail" id="useremail">
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" class="form-control" name="password" id="password">
+            </div>
+            <div class="form-group pt-3"> 
+                <a href="{{start_url}}/dologin/">
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </a>
+                <a href="{{start_url}}/Join/">
+                    <button type="button" class="btn btn-secondary">가입하기</button>
+                </a>    
+            </div>
+        </form>  
+    </div>
+    {%block success_login%}
+    {%endblock%}
+{%endblock%}
